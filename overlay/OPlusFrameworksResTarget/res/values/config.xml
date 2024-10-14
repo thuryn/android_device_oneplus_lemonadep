@@ -5,6 +5,9 @@
 -->
 <resources>
 
+    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
+    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
+
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -102,36 +105,36 @@
         <item>420</item>
         <item>510</item>
         <item>620</item>
+        <item>800</item>
         <item>1000</item>
-        <item>2000</item>
-        <item>3100</item>
-        <item>3988</item>
-        <item>5018</item>
-        <item>6232</item>
-        <item>7648</item>
-        <item>9280</item>
-        <item>11146</item>
-        <item>13261</item>
-        <item>15640</item>
-        <item>18302</item>
-        <item>21260</item>
-        <item>24532</item>
-        <item>28133</item>
-        <item>32080</item>
-        <item>36388</item>
-        <item>41073</item>
-        <item>46153</item>
-        <item>51642</item>
-        <item>63912</item>
-        <item>78015</item>
-        <item>94076</item>
-        <item>112226</item>
-        <item>132592</item>
-        <item>155302</item>
-        <item>180486</item>
-        <item>208271</item>
-        <item>223180</item>
-        <item>255108</item>
+        <item>1400</item>
+        <item>1800</item>
+        <item>2200</item>
+        <item>2600</item>
+        <item>3000</item>
+        <item>3400</item>
+        <item>3800</item>
+        <item>4200</item>
+        <item>4600</item>
+        <item>5000</item>
+        <item>5400</item>
+        <item>5800</item>
+        <item>6200</item>
+        <item>6600</item>
+        <item>7000</item>
+        <item>7400</item>
+        <item>7800</item>
+        <item>8200</item>
+        <item>8600</item>
+        <item>9000</item>
+        <item>9400</item>
+        <item>10200</item>
+        <item>11000</item>
+        <item>11800</item>
+        <item>12600</item>
+        <item>13400</item>
+        <item>14200</item>
+        <item>15000</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -148,11 +151,11 @@
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-        <item>2.0487</item>
-        <item>4.8394</item>
-        <item>15.2619</item>
+        <item>20</item>
+        <item>24</item>
         <item>33</item>
-        <item>49</item>
+        <item>42</item>
+        <item>52</item>
         <item>62.95</item>
         <item>76.46</item>
         <item>84.38</item>
@@ -204,25 +207,25 @@
 
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
-        <item>0.0</item>
-        <item>2.87</item>
-        <item>2.92</item>
-        <item>3.1</item>
-        <item>3.57</item>
-        <item>4.25</item>
-        <item>5.17</item>
-        <item>6.25</item>
-        <item>7.46</item>
-        <item>9.01</item>
-        <item>10.72</item>
-        <item>12.79</item>
-        <item>14.79</item>
-        <item>17.25</item>
-        <item>20.09</item>
-        <item>22.73</item>
-        <item>25.75</item>
-        <item>29.04</item>
-        <item>32.47</item>
+        <item>15.0</item>
+        <item>16.0</item>
+        <item>17.0</item>
+        <item>18.0</item>
+        <item>19.0</item>
+        <item>20.0</item>
+        <item>21.0</item>
+        <item>22.0</item>
+        <item>23.0</item>
+        <item>24.0</item>
+        <item>25.0</item>
+        <item>26.0</item>
+        <item>27.0</item>
+        <item>28.0</item>
+        <item>29.0</item>
+        <item>30.0</item>
+        <item>31.0</item>
+        <item>32.0</item>
+        <item>33.0</item>
         <item>36.59</item>
         <item>40.5</item>
         <item>44.76</item>
@@ -343,15 +346,60 @@
         <item>255</item>
     </integer-array>
 
+    <!-- If the screen brightness is already set at or below config_screenBrightnessDim, and the
+         user activity timeout expires, we still want to dim the screen slightly to indicate that
+         the device is about to go to sleep. The screen will dim by this amount in that case.
+         -->
+    <item name="config_screenBrightnessMinimumDimAmountFloat" format="float" type="dimen">0</item>
+
+    <!-- See DisplayWhiteBalanceController.
+         A float array containing a list of ambient brightnesses, in Lux. This array,
+         together with config_displayWhiteBalanceHighLightAmbientBiasesStrong, is used to generate a
+         lookup table used in DisplayWhiteBalanceController. This lookup table is used to map
+         ambient brightness readings to a bias, where the bias is used to linearly interpolate
+         between ambient color temperature and
+         config_displayWhiteBalanceHighLightAmbientColorTemperatureStrong.
+         This table is optional. If used, this array must,
+         1) Contain at least two entries
+         2) Be the same length as config_displayWhiteBalanceHighLightAmbientBiasesStrong. -->
+    <array name ="config_displayWhiteBalanceHighLightAmbientBrightnessesStrong">
+        <item>200</item>
+        <item>200</item>
+    </array>
+
+    <!-- See DisplayWhiteBalanceController.
+         An array containing a list of biases. See
+         config_displayWhiteBalanceHighLightAmbientBrightnessesStrong for additional details.
+         This array must be in the range of [0.0, 1.0]. -->
+    <array name ="config_displayWhiteBalanceHighLightAmbientBiasesStrong">
+        <item>0</item>
+        <item>1</item>
+    </array>
+
+    <!-- See DisplayWhiteBalanceController.
+        An array containing a list of biases. See
+        config_displayWhiteBalanceHighLightAmbientBrightnesses for additional details.
+        This array must be in the range of [0.0, 1.0]. -->
+    <array name ="config_displayWhiteBalanceHighLightAmbientBiases">
+        <item>100</item>
+        <item>100</item>
+    </array>
+
+    <!-- Screen brightness used to dim the screen while dozing in a very low power state.
+         May be less than the minimum allowed brightness setting
+         that can be set by the user. -->
+    <integer name="config_screenBrightnessDoze">30</integer>
+    <item name="config_screenBrightnessDozeFloat" format="float" type="dimen">0.12</item>
+
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">6</integer>
+    <integer name="config_screenBrightnessDim">255</integer>
 
     <!-- Default screen brightness setting set.
          -2 is invalid so setting will resort to int value specified above.
          Must be in the range specified by minimum and maximum. -->
-    <item type="dimen" name="config_screenBrightnessSettingDefaultFloat">0.45882353</item>
+    <item type="dimen" name="config_screenBrightnessSettingDefaultFloat">0.95882353</item>
 
     <!-- Maximum screen brightness allowed by the power manager.
          -2 is invalid so setting will resort to int value specified above.
@@ -427,7 +475,7 @@
 
     <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
-    <bool name="config_dozeAlwaysOnEnabled">false</bool>
+    <bool name="config_dozeAlwaysOnEnabled">true</bool>
 
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.udfps</string>
