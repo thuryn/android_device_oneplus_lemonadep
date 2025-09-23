@@ -91,32 +91,25 @@
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
         <item>1</item>
-        <item>4</item>
-        <item>12</item>
         <item>20</item>
-        <item>28</item>
-        <item>47</item>
-        <item>63</item>
-        <item>86</item>
-        <item>150</item>
-        <item>220</item>
-        <item>270</item>
-        <item>360</item>
-        <item>420</item>
-        <item>510</item>
-        <item>620</item>
+        <item>60</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+        <item>600</item>
         <item>800</item>
         <item>1000</item>
         <item>1400</item>
         <item>1800</item>
         <item>2200</item>
-        <item>2600</item>
-        <item>3000</item>
-        <item>3400</item>
-        <item>3800</item>
-        <item>4200</item>
-        <item>4600</item>
-        <item>5000</item>
+        <item>2400</item>
+        <item>2800</item>
+        <item>3200</item>
+        <item>3600</item>
+        <item>4000</item>
+        <item>4400</item>
+        <item>4800</item>
+        <item>5200</item>
         <item>5400</item>
         <item>5800</item>
         <item>6200</item>
@@ -127,14 +120,21 @@
         <item>8200</item>
         <item>8600</item>
         <item>9000</item>
-        <item>9400</item>
-        <item>10200</item>
+        <item>9500</item>
+        <item>10000</item>
         <item>11000</item>
-        <item>11800</item>
-        <item>12600</item>
-        <item>13400</item>
-        <item>14200</item>
+        <item>12000</item>
+        <item>13000</item>
+        <item>14000</item>
         <item>15000</item>
+        <item>16000</item>
+        <item>18000</item>
+        <item>20000</item>
+        <item>22000</item>
+        <item>24000</item>
+        <item>26000</item>
+        <item>28000</item>
+        <item>30000</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -151,52 +151,52 @@
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-        <item>20</item>
-        <item>24</item>
+        <item>16</item>
+        <item>17</item>
+        <item>19</item>
+        <item>21</item>
+        <item>23</item>
+        <item>25</item>
+        <item>27</item>
+        <item>30</item>
         <item>33</item>
-        <item>42</item>
+        <item>36</item>
+        <item>39</item>
+        <item>44</item>
+        <item>48</item>
         <item>52</item>
-        <item>62.95</item>
-        <item>76.46</item>
-        <item>84.38</item>
-        <item>89.51</item>
-        <item>100.34</item>
-        <item>109.48</item>
-        <item>115</item>
-        <item>123.86</item>
-        <item>129.18</item>
-        <item>138.07</item>
-        <item>148.62</item>
-        <item>175.84</item>
-        <item>234.9</item>
-        <item>279</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>360</item>
-        <item>380</item>
-        <item>400</item>
-        <item>420</item>
-        <item>440</item>
-        <item>460</item>
-        <item>480</item>
-        <item>500</item>
-        <item>520</item>
-        <item>540</item>
-        <item>560</item>
-        <item>580</item>
+        <item>56</item>
+        <item>60</item>
+        <item>65</item>
+        <item>70</item>
+        <item>75</item>
+        <item>80</item>
+        <item>85</item>
+        <item>90</item>
+        <item>95</item>
+        <item>101</item>
+        <item>114</item>
+        <item>127</item>
+        <item>142</item>
+        <item>158</item>
+        <item>175</item>
+        <item>194</item>
+        <item>215</item>
+        <item>237</item>
+        <item>261</item>
+        <item>288</item>
+        <item>317</item>
+        <item>348</item>
+        <item>382</item>
+        <item>438</item>
+        <item>458</item>
+        <item>511</item>
+        <item>548</item>
         <item>600</item>
-        <item>620</item>
-        <item>660</item>
-        <item>700</item>
-        <item>740</item>
-        <item>780</item>
-        <item>820</item>
-        <item>860</item>
+        <item>680</item>
+        <item>800</item>
         <item>900</item>
-        <item>940</item>
-        <item>960</item>
-        <item>1000</item>
+        <item>1000.0</item>
     </array>
 
     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
