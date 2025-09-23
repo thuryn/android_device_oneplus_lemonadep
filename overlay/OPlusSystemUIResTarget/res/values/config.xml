@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Charging info current divider, if needed -->
-    <integer name="config_currentInfoDivider" translatable="false">10000</integer>
+    <integer name="config_currentInfoDivider" translatable="false">1</integer>
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
@@ -72,35 +72,35 @@
         <item>0</item>
         <item>0</item>
         <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
         <item>50</item>
-        <item>75</item>
-        <item>100</item>
-        <item>120</item>
+        <item>52</item>
+        <item>56</item>
+        <item>62</item>
+        <item>70</item>
+        <item>80</item>
+        <item>92</item>
+        <item>104</item>
+        <item>116</item>
+        <item>128</item>
         <item>140</item>
-        <item>160</item>
-        <item>180</item>
-        <item>200</item>
-        <item>220</item>
-        <item>240</item>
-        <item>260</item>
-        <item>280</item>
-        <item>300</item>
-        <item>320</item>
-        <item>340</item>
-        <item>360</item>
+        <item>152</item>
+        <item>164</item>
+        <item>186</item>
+        <item>198</item>
+        <item>210</item>
+        <item>222</item>
+        <item>234</item>
+        <item>246</item>
+        <item>258</item>
+        <item>270</item>
+        <item>282</item>
+        <item>294</item>
+        <item>306</item>
+        <item>318</item>
+        <item>330</item>
+        <item>342</item>
+        <item>354</item>
+        <item>366</item>
         <item>380</item>
         <item>400</item>
         <item>420</item>
