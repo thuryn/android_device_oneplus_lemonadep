@@ -11,19 +11,19 @@
     <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
     to brightness values; -1 means keeping the current brightness. -->
     <integer-array name="config_doze_brightness_sensor_to_brightness">
-        <item>30</item>
-        <item>32</item>
+        <item>10</item>
+        <item>13</item>
+        <item>16</item>
+        <item>19</item>
+        <item>22</item>
+        <item>25</item>
+        <item>28</item>
+        <item>31</item>
         <item>34</item>
-        <item>36</item>
-        <item>38</item>
+        <item>37</item>
         <item>40</item>
-        <item>42</item>
-        <item>44</item>
-        <item>46</item>
+        <item>43</item>
         <item>48</item>
-        <item>50</item>
-        <item>51</item>
-        <item>51</item>
         <item>52</item>
         <item>52</item>
         <item>53</item>
