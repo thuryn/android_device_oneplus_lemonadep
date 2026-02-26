@@ -79,3 +79,6 @@ $(call inherit-product, device/oneplus/sm8350-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/lemonadep/lemonadep-vendor.mk)
+
+# Dolby
+$(call inherit-product, hardware/dolby/dolby.mk)
